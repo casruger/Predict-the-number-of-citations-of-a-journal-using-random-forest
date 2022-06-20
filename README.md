@@ -7,13 +7,13 @@ Create a machine learning model which can predict the number of citations an art
 # How we build the model 
 
 ## Feature Engineering
-Besides the provided features such as the year of publication, venue, number of references per article, we
-generated some additional features which will be further elaborated on in this section. First, to process the
+Besides the provided features such as the year of publication, venue, and the number of references per article, we
+generated some additional features, which will be further elaborated on in this section. First, to process the
 textual data (e.g., the abstract and title) to readable data for the algorithm, we used the TfidfVectorizer
 function of the scikit learn library. This function converts the textual data into a sparse matrix of token count
 frequencies, which is interpretable by the algorithm. Before the usage of the TfidfVectorizer function, we
 cleaned textual data by removing stop words and lower-casing them, as described by Bernardo (2019) . Besides
-that, we also generated features that represent the length of the title, abstract, number of authors, number of
+that, we also generated features that represent the length of the title, abstract, number of authors, and number of
 topics. According to Chakraborty et. al (2014) and Yan et. al (2011), these are one of the more important
 features to be able to predict the citation count. To account for the numerical features, we used the
 StandardScaler function, subtracting the mean and then dividing that by the standard deviation. If this
@@ -63,7 +63,7 @@ Pretty Printing a pandas dataframe. (2013, August 30). Stack Overflow.
 https://stackoverflow.com/questions/18528533/pretty-printing-a-pandas-dataframe
 
 # Result
-We reached an rsquared of 0.39. Meaning we could predict around 39% of the variance. 
+We reached an R-squared of 0.39. Meaning we could predict around 39% of the variance. 
 There were some investigations regarding the usage of H-index to account for the author’s popularity, which
 we could have scrapped from Elsevier’s Python API (Elsapy). However, due to time constraints, we could not
 find a way to properly use this powerful package. Moreover, we did not spend enough time to apply the Sklearn
